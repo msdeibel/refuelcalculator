@@ -1,20 +1,72 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="container">
+  <div class="form-group group" id="basics">
+    <div class="row">
+      <div class="col-4">
+        Consumption (l/100km)
+        <input type="number" step="0.1" class="number form-control" placeholder="l/100km" [(ngModel)]="consumptionPer100km">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        Station 1
+        <input type="text" placeholder="Name" class="form-control" [(ngModel)]="name1">
+      </div>
+      <div class="col-2">
+        <br>
+        <input type="number" step="0.1" placeholder="Detour (in km)" class="form-control number" [(ngModel)]="detour1">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        Station 2
+        <input type="text" placeholder="Name" class="form-control" [(ngModel)]="name2">
+      </div>
+      <div class="col-2">
+        <br>
+        <input type="number" step="0.1" placeholder="Detour (in km)" class="form-control number" [(ngModel)]="detour2">
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-2">
+        km since last top-up
+        <input type="number" class="form-control" placeholder="km" [(ngModel)]="distance">
+      </div>
+      <div class="col-2">
+        <br>Est. refill<br>
+        <input type="text" class="form-control" [value]="estimatedRefill()" disabled>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <label>{{name1}}</label>
+        <input type="number" step="0.01" class="form-control" placeholder="Current price" [(ngModel)]="price1">
+      </div>
+      <div class="col-2">
+        <label>{{name2}}</label>
+        <input type="number" step="0.01" class="form-control" placeholder="Current price" [(ngModel)]="price2">
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-5">
+        <h4>Total cost (incl. detour consumption)</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <label for="total1">{{name1}}</label><br>
+        <input type="text" id="total1" class="form-control" [value]="totalCost1()" disabled>
+      </div>
+      <div class="col-2">
+        <label for="total2">{{name2}}</label><br>
+        <input type="text" id="total2" class="form-control" [value]="totalCost2()" disabled>
+      </div>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
