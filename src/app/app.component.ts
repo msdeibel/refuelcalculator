@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { StationComponent } from './station/station.component';
+import { ConsumptionComponent } from './consumption/consumption.component';
 
 @Component({
   selector: 'app-root',
@@ -10,34 +12,29 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tankrechner';
-  consumptionPer100km: number = 6.7;
+  consumption = {"per100km": 6.7}
+  stations = [
+              {"index": 1, "name": "", "detourKm": 1, "price": 1.25},
+              {"index": 2, "name": "", "detourKm": 1, "price": 1.25}
+  ]
 
-  name1: string = ""; 
-  detour1: number = 1;
+  distance: number;
 
-  name2: string = "";
-  detour2: number = 1;
+  constructor() {  
+    this.distance = 300;
+  }
 
-  distance: number = 0;
-
-  price1: number = 1.25;
-  price2: number = 1.25;
-  
   public estimatedRefill(){
-    return (this.distance * this.consumptionPer100km)/100;
+    return (this.distance * this.consumption.per100km)/100;
   }
 
-  public totalCost1(){
-    return this.totalCost(this.price1, this.detour1);
-  }
-
-  public totalCost2(){
-    return this.totalCost(this.price2, this.detour2);
+  public totalCostFor(station: {index: number, name: string, detourKm: number, price: number}){
+    return this.totalCost(station.price, station.detourKm);
   }
 
   private totalCost(price: number, detour: number) {
-    var refillCost = this.distance * this.consumptionPer100km / 100 * price;
-    var detourCost = detour * this.consumptionPer100km / 100 * price
+    var refillCost = this.distance * this.consumption.per100km / 100 * price;
+    var detourCost = detour * this.consumption.per100km / 100 * price
     var unroundedCost =  refillCost + detourCost;
                         
     return Math.round(unroundedCost * 100) / 100

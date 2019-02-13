@@ -1,52 +1,29 @@
 <div class="container">
   <div class="form-group group" id="basics">
-    <div class="row">
-      <div class="col-4">
-        Consumption (l/100km)
-        <input type="number" step="0.1" class="number form-control" placeholder="l/100km" [(ngModel)]="consumptionPer100km">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-2">
-        Station 1
-        <input type="text" placeholder="Name" class="form-control" [(ngModel)]="name1">
-      </div>
-      <div class="col-2">
-        <br>
-        <input type="number" step="0.1" placeholder="Detour (in km)" class="form-control number" [(ngModel)]="detour1">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-2">
-        Station 2
-        <input type="text" placeholder="Name" class="form-control" [(ngModel)]="name2">
-      </div>
-      <div class="col-2">
-        <br>
-        <input type="number" step="0.1" placeholder="Detour (in km)" class="form-control number" [(ngModel)]="detour2">
-      </div>
-    </div>
+    <app-consumption 
+      [(consumption)]="consumption">
+    </app-consumption>
+    <app-station 
+      *ngFor="let station of stations"
+      [station]=station>
+    </app-station>
   </div>
   <hr>
   <div class="form-group">
     <div class="row">
       <div class="col-2">
-        km since last top-up
+        km since last refuel
         <input type="number" class="form-control" placeholder="km" [(ngModel)]="distance">
       </div>
       <div class="col-2">
         <br>Est. refill<br>
-        <input type="text" class="form-control" [value]="estimatedRefill()" disabled>
+        <input type="text" class="form-control" placeholder="l" [value]="estimatedRefill()" disabled>
       </div>
     </div>
     <div class="row">
-      <div class="col-2">
-        <label>{{name1}}</label>
-        <input type="number" step="0.01" class="form-control" placeholder="Current price" [(ngModel)]="price1">
-      </div>
-      <div class="col-2">
-        <label>{{name2}}</label>
-        <input type="number" step="0.01" class="form-control" placeholder="Current price" [(ngModel)]="price2">
+      <div class="col-2" *ngFor="let station of stations">
+        <label>{{station.name}}</label>
+        <input type="number" step="0.01" class="form-control" placeholder="Price" [(ngModel)]="station.price">
       </div>
     </div>
   </div>
@@ -58,13 +35,9 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-2">
-        <label for="total1">{{name1}}</label><br>
-        <input type="text" id="total1" class="form-control" [value]="totalCost1()" disabled>
-      </div>
-      <div class="col-2">
-        <label for="total2">{{name2}}</label><br>
-        <input type="text" id="total2" class="form-control" [value]="totalCost2()" disabled>
+      <div class="col-2" *ngFor="let station of stations">
+        <label for="total1">{{station.name}}</label><br>
+        <input type="text" id="total1" class="form-control" disabled [value]="totalCostFor(station)">
       </div>
     </div>
   </div>
