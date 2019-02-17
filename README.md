@@ -7,7 +7,9 @@ As already stated in the project description, this is just a little playground f
 Have you ever wondered if it is worth taking a detour for refuelling your car or motorbike? Normally you have two or three fuel stations on your way to/from work and the prices differ just a little bit.
 But is it worth putting in two extra kilometers to refuel at the station that has a slightly lower price? This calculator gives you a rough estimation how much you could save comparing the total costs of refuelling between two stations. Including what the addition distance will cost you.
 
-#Environment
+Find out on the demo page at http://msdeibel.github.io/refuelcalculator
+
+# Environment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
