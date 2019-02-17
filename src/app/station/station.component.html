@@ -3,8 +3,13 @@
     Station {{station.index}}
     <input type="text" placeholder="Name" class="form-control" [(ngModel)]="station.name">
   </div>
-  <div class="col-4">
+  <div class="col-5">
     Detour
-    <input type="number" step="0.1" placeholder="km" class="form-control number" [(ngModel)]="station.detourKm">
+    <div class="input-group">
+      <input type="number" step="0.1" placeholder="km" class="form-control number" [(ngModel)]="station.detourKm">
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon1">km</span>
+      </div>
+    </div>
   </div>
 </div>

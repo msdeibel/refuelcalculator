@@ -27,19 +27,29 @@
         </h5>
       </ng-template>
       <ng-template ngbPanelContent>
-        <div class="row">
-          <div class="col-4">
-            km since last refuel
-            <input type="number" class="form-control" placeholder="km" [(ngModel)]="distance">
+        <div class="row align-items-end">
+          <div class="col-6">
+            Distance since last refuel
+            <div class="input-group">
+              <input type="number" class="form-control" placeholder="km" [(ngModel)]="distance">
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">km</span>
+              </div>
+            </div>
           </div>
-          <div class="col-4">
-            Est. refill
-            <input type="text" class="form-control" placeholder="l" [value]="estimatedRefill()" disabled>
+          <div class="col-6 ">
+            Estimated refill
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="l" [value]="estimatedRefill()" disabled>
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">l</span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row">
           <div class="col-4" *ngFor="let station of stations">
-            <label>Price at {{station.name}}</label>
+            <label>Price at<br>{{station.name !== '' ? station.name : 'Station ' + station.index }}</label>
             <input type="number" step="0.01" class="form-control" placeholder="Price" [(ngModel)]="station.price">
           </div>
         </div>
@@ -56,7 +66,7 @@
       <ng-template ngbPanelContent>
         <div class="row">
           <div class="col-4" *ngFor="let station of stations">
-            <label>{{station.name}}</label><br>
+            <label>{{station.name !== '' ? station.name : 'Station ' + station.index }}</label><br>
             <input type="text" class="form-control" disabled [value]="totalCostFor(station)">
           </div>
         </div>

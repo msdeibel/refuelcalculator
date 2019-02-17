@@ -15,7 +15,8 @@ export class AppComponent {
   consumption = {"per100km": 6.7}
   stations = [
               {"index": 1, "name": "", "detourKm": 1, "price": 1.25},
-              {"index": 2, "name": "", "detourKm": 1, "price": 1.25}
+              {"index": 2, "name": "", "detourKm": 1, "price": 1.25},
+              {"index": 3, "name": "", "detourKm": 1, "price": 1.25}
   ]
 
   distance: number;
