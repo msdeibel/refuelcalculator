@@ -1,45 +1,67 @@
 <div class="container">
-  <div class="form-group group" id="basics">
-    <app-consumption 
-      [(consumption)]="consumption">
-    </app-consumption>
-    <app-station 
-      *ngFor="let station of stations"
-      [station]=station>
-    </app-station>
-  </div>
-  <hr>
-  <div class="form-group">
-    <div class="row">
-      <div class="col-2">
-        km since last refuel
-        <input type="number" class="form-control" placeholder="km" [(ngModel)]="distance">
-      </div>
-      <div class="col-2">
-        <br>Est. refill<br>
-        <input type="text" class="form-control" placeholder="l" [value]="estimatedRefill()" disabled>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-2" *ngFor="let station of stations">
-        <label>{{station.name}}</label>
-        <input type="number" step="0.01" class="form-control" placeholder="Price" [(ngModel)]="station.price">
-      </div>
-    </div>
-  </div>
-  <hr>
-  <div class="form-group">
-    <div class="row">
-      <div class="col-5">
-        <h4>Total cost (incl. detour consumption)</h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-2" *ngFor="let station of stations">
-        <label for="total1">{{station.name}}</label><br>
-        <input type="text" id="total1" class="form-control" disabled [value]="totalCostFor(station)">
-      </div>
-    </div>
-  </div>
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-1, ngb-panel-2">
+    <ngb-panel>
+      <ng-template ngbPanelTitle>
+        <h5 class="mb-0">
+          <button class="btn btn-link">
+            Settings
+          </button>
+        </h5>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <app-consumption 
+          [(consumption)]="consumption">
+        </app-consumption>
+        <app-station 
+          *ngFor="let station of stations"
+          [station]=station>
+        </app-station>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel>
+      <ng-template ngbPanelTitle>
+        <h5 class="mb-0">
+          <button class="btn btn-link">
+              Refuel data
+          </button>
+        </h5>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <div class="row">
+          <div class="col-4">
+            km since last refuel
+            <input type="number" class="form-control" placeholder="km" [(ngModel)]="distance">
+          </div>
+          <div class="col-4">
+            Est. refill
+            <input type="text" class="form-control" placeholder="l" [value]="estimatedRefill()" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4" *ngFor="let station of stations">
+            <label>Price at {{station.name}}</label>
+            <input type="number" step="0.01" class="form-control" placeholder="Price" [(ngModel)]="station.price">
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel>
+      <ng-template ngbPanelTitle>
+        <h5 class="mb-0">
+          <button class="btn btn-link">
+              Total cost (incl. detour consumption)
+          </button>
+        </h5>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <div class="row">
+          <div class="col-4" *ngFor="let station of stations">
+            <label>{{station.name}}</label><br>
+            <input type="text" class="form-control" disabled [value]="totalCostFor(station)">
+          </div>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
 </div>
 
