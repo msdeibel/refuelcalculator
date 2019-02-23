@@ -12,7 +12,7 @@ import { ConsumptionComponent } from './consumption/consumption.component';
 })
 export class AppComponent {
   title = 'Refuel Calculator';
-  consumption = {"per100km": 6.7}
+  consumption = {"per100km": 6.7, "carCostPerKm": 0.57}
   stations = [
               {"index": 1, "name": "", "detourKm": 1, "price": 1.25},
               {"index": 2, "name": "", "detourKm": 1, "price": 1.25},
@@ -35,8 +35,9 @@ export class AppComponent {
 
   private totalCost(price: number, detour: number) {
     var refillCost = this.distance * this.consumption.per100km / 100 * price;
-    var detourCost = detour * this.consumption.per100km / 100 * price
-    var unroundedCost =  refillCost + detourCost;
+    var detourFuelCost = detour * this.consumption.per100km / 100 * price;
+    var detourCarCost = detour * this.consumption.carCostPerKm - detourFuelCost;
+    var unroundedCost =  refillCost + detourCarCost;
                         
     return Math.round(unroundedCost * 100) / 100
   }

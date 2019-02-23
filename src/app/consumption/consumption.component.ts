@@ -9,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
   ]
 })
 export class ConsumptionComponent implements OnInit {
-  @Input() consumption: { per100km: number };
+  @Input() consumption: { per100km: number, carCostPerKm: number };
   
   constructor() { }
 
