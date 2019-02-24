@@ -23,6 +23,8 @@
       "urls": [
         "/refuelcalculator/assets/icons/favicon.ico",
         "/refuelcalculator/assets/icons/icon-128x128.png",
+        "/refuelcalculator/assets/icons/icon-192x192.png",
+        "/refuelcalculator/assets/icons/icon-512x512.png",
         "/refuelcalculator/assets/icons/icon-64x64.png",
         "/refuelcalculator/assets/icons/icon-72x72.png",
         "/refuelcalculator/assets/icons/icon-96x96.png"
@@ -34,6 +36,8 @@
   "hashTable": {
     "/refuelcalculator/assets/icons/favicon.ico": "e34fc3f3ba5a2068ac028f7f80095dc4efe8d121",
     "/refuelcalculator/assets/icons/icon-128x128.png": "a984f74b6dcf4b7fd2d4ae6c5cb498ca3f029036",
+    "/refuelcalculator/assets/icons/icon-192x192.png": "3f1c43b23030b04a275e95de83f6c8c779e1b162",
+    "/refuelcalculator/assets/icons/icon-512x512.png": "4239c6039839c7f020a72193fad0386fc67d4b48",
     "/refuelcalculator/assets/icons/icon-64x64.png": "42f9bd1cf575322eaf589c1b0ae4c5ce2e773326",
     "/refuelcalculator/assets/icons/icon-72x72.png": "50c0dfb01487bef71e91275ce07e66b8ac75dcc6",
     "/refuelcalculator/assets/icons/icon-96x96.png": "96fff07c497b8ef39c8d5e0ef236d9ece2f5f915",
