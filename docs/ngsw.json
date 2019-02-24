@@ -9,7 +9,7 @@
       "urls": [
         "/refuelcalculator/favicon.ico",
         "/refuelcalculator/index.html",
-        "/refuelcalculator/main.7d1cd4e1594dd7e56a2b.js",
+        "/refuelcalculator/main.cf6bf794b41494432954.js",
         "/refuelcalculator/polyfills.46532d96d3286697c138.js",
         "/refuelcalculator/runtime.a5dd35324ddfd942bef1.js",
         "/refuelcalculator/styles.3ff695c00d717f2d2a11.css"
@@ -38,8 +38,8 @@
     "/refuelcalculator/assets/icons/icon-72x72.png": "50c0dfb01487bef71e91275ce07e66b8ac75dcc6",
     "/refuelcalculator/assets/icons/icon-96x96.png": "96fff07c497b8ef39c8d5e0ef236d9ece2f5f915",
     "/refuelcalculator/favicon.ico": "e34fc3f3ba5a2068ac028f7f80095dc4efe8d121",
-    "/refuelcalculator/index.html": "749d8db43affcd3612bc8ae05f4f8e17f995706c",
-    "/refuelcalculator/main.7d1cd4e1594dd7e56a2b.js": "196a58e69088305556b19450ade722885bff59d8",
+    "/refuelcalculator/index.html": "4547d54d24c7875ca4d745990184527f84d77bf1",
+    "/refuelcalculator/main.cf6bf794b41494432954.js": "1c4e37b9032e4cab3744e23e3b85e1631acfe2e0",
     "/refuelcalculator/polyfills.46532d96d3286697c138.js": "6946e10a03311677a01490b8e91741668e64e17e",
     "/refuelcalculator/runtime.a5dd35324ddfd942bef1.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
     "/refuelcalculator/styles.3ff695c00d717f2d2a11.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
