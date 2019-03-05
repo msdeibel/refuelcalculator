@@ -12,7 +12,7 @@ import { ConsumptionComponent } from './consumption/consumption.component';
 })
 export class AppComponent {
   title = 'Refuel Calculator';
-  consumption = {"per100km": 6.7, "carCostPerKm": 0.57}
+  consumption = {"per100km": 6.8, "carCostPerKm": 0.39}
   stations = [
               {"index": 1, "name": "", "detourKm": 1, "price": 1.25},
               {"index": 2, "name": "", "detourKm": 1, "price": 1.25},

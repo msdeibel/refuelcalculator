@@ -28,7 +28,7 @@
       </ng-template>
       <ng-template ngbPanelContent>
         <div class="row align-items-end">
-          <div class="col-6">
+          <div class="col-lg-4 col-sm-7 col-xs-12">
             Distance since last refuel
             <div class="input-group">
               <input type="number" class="form-control" placeholder="km" [(ngModel)]="distance">
@@ -37,7 +37,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 ">
+          <div class="col-lg-4 col-sm-5 col-xs-12">
             Estimated refill
             <div class="input-group">
               <input type="text" class="form-control" placeholder="l" [value]="estimatedRefill()" disabled>

@@ -4,8 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
   selector: 'app-consumption',
   templateUrl: './consumption.component.html',
   styleUrls: [
-    './consumption.component.css',
-    '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+    './consumption.component.css'
   ]
 })
 export class ConsumptionComponent implements OnInit {
